@@ -1,0 +1,23 @@
+{
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "python.linting.flake8Enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.maxNumberOfProblems": 100,
+  "python.linting.ignorePatterns": [".vscode/*.py", "**/site-packages/**/*.py"],
+  "python.formatting.provider": "none",
+  "python.linting.flake8Args": ["--config=services/server-core/setup.cfg"],
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none",
+    "reportMissingModuleSource": "none"
+  }
+}
