@@ -1,15 +1,34 @@
+from broadcaster import Broadcast
 from fastapi import FastAPI
 
-from app.celery_utils import create_celery
+from app.config import settings
+
+broadcast = Broadcast(settings.WS_MESSAGE_QUEUE)
 
 
 def create_app() -> FastAPI:
     app = FastAPI()
 
+    # do this before loading routes
+    from app.celery_utils import create_celery
     app.celery_app = create_celery()
-    
+
     from app.users import users_router
     app.include_router(users_router)
+
+    from app.ws import ws_router
+    app.include_router(ws_router)
+
+    from app.ws.views import register_socketio_app
+    register_socketio_app(app)
+    
+    @app.on_event("startup")
+    async def startup_event():
+        await broadcast.connect()
+
+    @app.on_event("shutdown")
+    async def shutdown_event():
+        await broadcast.disconnect()
 
     @app.get("/")
     async def root():
