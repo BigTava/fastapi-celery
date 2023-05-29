@@ -1,0 +1,32 @@
+[2023-05-29 13:20:38,758: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/app/utils.py:204: CDeprecationWarning: 
+    The 'CELERY_RESULT_BACKEND' setting is deprecated and scheduled for removal in
+    version 6.0.0. Use the result_backend instead
+
+  deprecated.warn(description=f'The {setting!r} setting',
+
+[2023-05-29 13:20:38,758: WARNING/MainProcess] Please run `celery upgrade settings path/to/settings.py` to avoid these warnings and to allow a smoother upgrade to Celery 6.0.
+[2023-05-29 13:20:39,582: INFO/MainProcess] Connected to redis://redis:6379/0
+[2023-05-29 13:20:39,585: INFO/MainProcess] mingle: searching for neighbors
+[2023-05-29 13:20:40,595: INFO/MainProcess] mingle: all alone
+[2023-05-29 13:20:40,608: INFO/MainProcess] celery@67a997a466b7 ready.
+[2023-05-29 13:20:45,436: INFO/MainProcess] Events of group {task} enabled by remote.
+[2023-05-29 13:21:41,569: INFO/MainProcess] Task app.users.tasks.task_test_logger[5bccf1f2-c90a-4065-b0a2-69cd95f74b1a] received
+[2023-05-29 13:21:41,576: INFO/ForkPoolWorker-7] Task app.users.tasks.task_test_logger[5bccf1f2-c90a-4065-b0a2-69cd95f74b1a] succeeded in 0.0045018589989922475s: None
+[2023-05-29 13:21:41,579: INFO/ForkPoolWorker-7] Connecting to redis
+[2023-05-29 13:21:41,580: INFO/ForkPoolWorker-7] Redis connection made
+[2023-05-29 13:21:41,581: INFO/ForkPoolWorker-7] Connecting to redis
+[2023-05-29 13:21:41,582: INFO/ForkPoolWorker-7] Redis connection made
+[2023-05-29 13:21:41,592: INFO/ForkPoolWorker-7] Redis connection lost
+[2023-05-29 13:21:41,592: INFO/ForkPoolWorker-7] Redis connection lost
+[2023-05-29 13:30:13,084: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/app/utils.py:204: CDeprecationWarning: 
+    The 'CELERY_RESULT_BACKEND' setting is deprecated and scheduled for removal in
+    version 6.0.0. Use the result_backend instead
+
+  deprecated.warn(description=f'The {setting!r} setting',
+
+[2023-05-29 13:30:13,084: WARNING/MainProcess] Please run `celery upgrade settings path/to/settings.py` to avoid these warnings and to allow a smoother upgrade to Celery 6.0.
+[2023-05-29 13:30:13,873: INFO/MainProcess] Connected to redis://redis:6379/0
+[2023-05-29 13:30:13,877: INFO/MainProcess] mingle: searching for neighbors
+[2023-05-29 13:30:14,886: INFO/MainProcess] mingle: all alone
+[2023-05-29 13:30:14,898: INFO/MainProcess] celery@18b9cb3cc83f ready.
+[2023-05-29 13:30:15,435: INFO/MainProcess] Events of group {task} enabled by remote.
