@@ -43,6 +43,8 @@ class BaseConfig:
         Queue("low_priority"),
     )
 
+    UPLOADS_DEFAULT_DEST: str = str(BASE_DIR / "upload")
+
     CELERY_TASK_ROUTES = (route_task,)
 
 class DevelopmentConfig(BaseConfig):

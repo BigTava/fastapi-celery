@@ -19,6 +19,9 @@ def create_app() -> FastAPI:
     from app.users import users_router
     app.include_router(users_router)
 
+    from app.tdd import tdd_router
+    app.include_router(tdd_router)
+
     from app.ws import ws_router
     app.include_router(ws_router)
 
