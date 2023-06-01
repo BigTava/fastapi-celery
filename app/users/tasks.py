@@ -7,6 +7,7 @@ from celery import Task, shared_task
 from celery.signals import after_setup_logger, task_postrun
 from celery.utils.log import get_task_logger
 
+from app.celery_utils import custom_celery_task
 from app.database import db_context
 
 logger = get_task_logger(__name__)
@@ -77,8 +78,8 @@ class BaseTaskWithRetry(Task):
     retry_backoff = True
 
 
-@shared_task(bind=True, base=BaseTaskWithRetry)
-def task_process_notification(self):
+@custom_celery_task(max_retries=3)
+def task_process_notification():
     if not random.choice([0, 1]):
         # mimic random error
         raise Exception()
