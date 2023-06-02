@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 
 worker_ready() {
-    celery -A project.asgi.celery inspect ping
+    celery -A app.asgi.celery inspect ping
 }
 
 until worker_ready; do
@@ -14,6 +14,6 @@ done
 >&2 echo 'Celery workers is available'
 
 exec celery flower \
-    --app=project.asgi.celery \
+    --app=app.asgi.celery \
     --broker="${CELERY_BROKER_URL}" \
     --basic_auth="${CELERY_FLOWER_USER}:${CELERY_FLOWER_PASSWORD}"
