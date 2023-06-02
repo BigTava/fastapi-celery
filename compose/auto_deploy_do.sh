@@ -4,10 +4,10 @@
 # DigitalOcean Droplet
 
 # generate TAR file from git
-git archive --format tar --output ./project.tar master
+git archive --format tar --output ./app.tar master
 
 echo 'Uploading project...'
-rsync ./project.tar root@$DIGITAL_OCEAN_IP_ADDRESS:/tmp/project.tar
+rsync ./app.tar root@$DIGITAL_OCEAN_IP_ADDRESS:/tmp/app.tar
 echo 'Uploaded complete.'
 
 echo 'Building image...'
