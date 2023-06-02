@@ -20,3 +20,4 @@ pytest-factoryboy==2.5.0
 pytest-cov==3.0.0
 Pillow==9.2.0
 python-multipart==0.0.5  # receive uploaded files in FastAPI.
+gunicorn==20.1.0
