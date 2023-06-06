@@ -9,3 +9,5 @@ RABBITMQ_DEFAULT_PASS=admin
 
 CELERY_FLOWER_USER=admin
 CELERY_FLOWER_PASSWORD=admin
+
+# SEE BEST PRACTICES https://testdriven.io/courses/fastapi-celery/best-practices/
